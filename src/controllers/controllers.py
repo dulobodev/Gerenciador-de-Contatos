@@ -75,4 +75,17 @@ def Update(id, contato_data):
     response = [{'mensagem' : 'Atualizacao de contato feita com sucesso'}]
     return jsonify(response), 200
 
+def Delete(contato_id):
+    confirmacao = request.args.get('confirmacao')
+    contato = Contato.query.get(contato_id)
 
+
+    if confirmacao == 'true':
+        db.session.delete(contato)
+        db.session.commit()
+
+        response = [{'mensagem' : 'anime deletado com sucesso'}]
+        return jsonify(response), 200
+    else:
+        response = [{'mensagem' : 'anime não encontrado'}]
+        return jsonify(response), 404

@@ -1,0 +1,22 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Poetry
+poetry.lock
+
+# Ambiente virtual
+venv/
+env/
+
+# IDEs e editores
+.vscode/
+.idea/
+
+# Arquivos de log
+*.log
+
+# Ignorar a pasta instance
+instance/
